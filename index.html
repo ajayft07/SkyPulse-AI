@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyPulse AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="container">
+
+    <h1>🌍 SkyPulse AI</h1>
+    <p class="subtitle">Real-Time Weather Intelligence Dashboard</p>
+
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Search any city...">
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+    <div id="weatherCard" class="weather-card">
+
+        <h2 id="city">City Name</h2>
+
+        <div class="temp">
+            <span id="temperature">--°C</span>
+        </div>
+
+        <p id="description">Weather Condition</p>
+
+        <div class="details">
+
+            <div class="detail-box">
+                💧
+                <span id="humidity">--%</span>
+                <p>Humidity</p>
+            </div>
+
+            <div class="detail-box">
+                🌬️
+                <span id="wind">-- km/h</span>
+                <p>Wind</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
