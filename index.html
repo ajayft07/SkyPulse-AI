@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SkyPulse AI</title>
 
 <link rel="stylesheet" href="style.css">
@@ -10,18 +11,30 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
 
-<div class="background-blur"></div>
+<div class="bg-animation"></div>
 
 <div class="container">
 
-    <div class="header">
+    <!-- HEADER -->
+
+    <header>
+
         <h1>🌍 SkyPulse AI</h1>
-        <p>Advanced Weather Intelligence Dashboard</p>
-    </div>
+
+        <p>
+            Futuristic Weather Intelligence Dashboard
+        </p>
+
+    </header>
+
+    <!-- SEARCH -->
 
     <div class="search-section">
 
@@ -31,10 +44,14 @@
         placeholder="Search any city...">
 
         <button onclick="getWeather()">
-            Search
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
         </button>
 
     </div>
+
+    <!-- QUICK CITIES -->
 
     <div class="city-buttons">
 
@@ -50,56 +67,132 @@
 
         <button onclick="quickSearch('Dubai')">Dubai</button>
 
+        <button onclick="quickSearch('Paris')">Paris</button>
+
+        <button onclick="quickSearch('New York')">New York</button>
+
     </div>
+
+    <!-- LOADING -->
+
+    <div id="loader" class="loader hidden">
+
+        <div class="spinner"></div>
+
+        <p>Loading Weather...</p>
+
+    </div>
+
+    <!-- MAIN WEATHER CARD -->
 
     <div class="weather-card">
 
-        <h2 id="city">Search A City</h2>
+        <h2 id="city">Search a City</h2>
 
-        <div class="weather-icon" id="weatherIcon">
+        <div id="weatherIcon" class="weather-icon">
             ☁️
         </div>
 
-        <div class="temperature" id="temperature">
+        <div id="temperature" class="temperature">
             --°C
         </div>
 
-        <div class="description" id="description">
+        <div id="description" class="description">
             Weather Condition
         </div>
 
         <div id="insight" class="insight">
-            AI weather insights will appear here.
+
+            AI Weather Insights will appear here.
+
         </div>
 
     </div>
+
+    <!-- WEATHER STATS -->
 
     <div class="stats-grid">
 
         <div class="stat-card">
+
             <h3>💧 Humidity</h3>
+
             <p id="humidity">--%</p>
+
         </div>
 
         <div class="stat-card">
+
             <h3>🌬 Wind</h3>
+
             <p id="wind">-- km/h</p>
+
         </div>
 
         <div class="stat-card">
+
             <h3>🌡 Feels Like</h3>
+
             <p id="feelsLike">--°C</p>
+
         </div>
 
         <div class="stat-card">
+
             <h3>👁 Visibility</h3>
+
             <p id="visibility">-- km</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>🌅 Sunrise</h3>
+
+            <p id="sunrise">--</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>🌇 Sunset</h3>
+
+            <p id="sunset">--</p>
+
         </div>
 
     </div>
 
+    <!-- FORECAST -->
+
+    <section class="forecast-section">
+
+        <h2>📅 5-Day Forecast</h2>
+
+        <div
+        id="forecastContainer"
+        class="forecast-container">
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
     <footer>
-        Powered by OpenWeather API • SkyPulse AI
+
+        <p>
+
+            Powered by OpenWeather API
+
+        </p>
+
+        <p>
+
+            © 2026 SkyPulse AI
+
+        </p>
+
     </footer>
 
 </div>
