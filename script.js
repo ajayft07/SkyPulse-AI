@@ -40,3 +40,7 @@ alert("City not found");
 }
 
 }
+function quickSearch(city){
+document.getElementById("cityInput").value = city;
+getWeather();
+}
