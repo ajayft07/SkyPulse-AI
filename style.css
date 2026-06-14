@@ -82,3 +82,20 @@ padding:15px;
 border-radius:15px;
 background:rgba(255,255,255,0.15);
 }
+.city-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+justify-content:center;
+margin-bottom:20px;
+}
+
+.city-buttons button{
+padding:8px 15px;
+border:none;
+border-radius:20px;
+background:rgba(255,255,255,0.2);
+color:white;
+cursor:pointer;
+backdrop-filter:blur(10px);
+}
